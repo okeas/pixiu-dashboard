@@ -85,7 +85,18 @@
               </div>
 
               <div style="margin-top: 25px" />
-              <el-form-item label="容器网络插件">
+              <el-form-item label="容器网络插件" class="app-pixiu-form-tooltip">
+                <template #label
+                  >容器网络插件
+                  <el-tooltip effect="light" placement="top">
+                    <template #content>
+                      <div class="app-pixiu-tooltip-describe">
+                        选择 kubernetes 集群 pod 网络类型，一经选择无法更改，推荐使用flannel
+                      </div>
+                    </template>
+                    <el-icon style="margin-left: 3px"><QuestionFilled /></el-icon>
+                  </el-tooltip>
+                </template>              
                 <el-radio-group v-model="data.clusterForm.cni">
                   <el-radio-button label="calico">calico</el-radio-button>
                   <el-radio-button label="flannel">flannel</el-radio-button>
@@ -789,4 +800,16 @@ const backToContainer = () => {
   font-size: 12px;
   text-align: center;
 }
+
+.app-pixiu-tooltip-describe {
+  width: 250px;
+  font-size: 12px;
+  color: #888888;
+}
+
+.app-pixiu-form-tooltip /deep/ .el-form-item__label {
+  display: flex;
+  align-items: center;
+}
+
 </style>
