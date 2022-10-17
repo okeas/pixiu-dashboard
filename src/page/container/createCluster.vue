@@ -807,7 +807,7 @@ const backToContainer = () => {
   color: #888888;
 }
 
-.app-pixiu-form-tooltip /deep/ .el-form-item__label {
+.app-pixiu-form-tooltip :deep(.el-form-item__label) {
   display: flex;
   align-items: center;
 }
